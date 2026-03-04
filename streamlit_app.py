@@ -40,7 +40,7 @@ st.video("https://www.youtube.com/watch?v=PUwmA3Q0_OE")
 st.write("---")
 
 st.image(
-"https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcC9x4ak1ruqBQvZq_rBcTMBHwSd-v-Zyz-A&s",
 use_column_width=True
 )
 
