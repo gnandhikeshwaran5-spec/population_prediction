@@ -39,9 +39,8 @@ st.video("https://www.youtube.com/watch?v=PUwmA3Q0_OE")
 
 st.write("---")
 
-# HERO IMAGE BELOW VIDEO
 st.image(
-"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/India_population_density_map.svg/1200px-India_population_density_map.svg.png",
+"https://images.unsplash.com/photo-1551288049-bebda4e38f71",
 use_column_width=True
 )
 
