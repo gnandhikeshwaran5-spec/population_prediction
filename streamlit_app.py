@@ -8,7 +8,7 @@ st.title("🇮🇳 India Population Prediction")
 st.markdown("### AI powered population forecasting system")
 
 st.image(
-"https://upload.wikimedia.org/wikipedia/commons/8/8b/World_population_density_map.png",
+"https://images.unsplash.com/photo-1551288049-bebda4e38f71",
 use_column_width=True
 )
 
