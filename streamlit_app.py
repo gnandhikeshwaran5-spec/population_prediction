@@ -1,28 +1,32 @@
 import streamlit as st
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-st.set_page_config(page_title="India Population Prediction", layout="wide")
+st.set_page_config(page_title="India Population AI", layout="wide")
 
-st.title("🇮🇳 India Population Prediction Dashboard")
-st.markdown("Machine Learning based population forecasting system")
+st.title("🇮🇳 India Population Prediction")
+st.markdown("### AI powered population forecasting system")
 
-# Dataset
+# HERO IMAGE
+st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/India_population_density_map.svg/1200px-India_population_density_map.svg.png")
+
+st.write("---")
+
+# MODEL
 years = np.array([2000,2005,2010,2015,2020]).reshape(-1,1)
 population = np.array([1056,1147,1234,1311,1380])
 
 model = LinearRegression()
 model.fit(years, population)
 
-# Sidebar input
-st.sidebar.header("Prediction Settings")
-year = st.sidebar.slider("Select Year", 2025, 2100, 2030)
+# INPUT
+st.subheader("Select Future Year")
+
+year = st.slider("Year", 2025, 2100, 2030)
 
 prediction = model.predict([[year]])
 
-# Metrics
+# RESULT CARDS
 col1, col2 = st.columns(2)
 
 with col1:
@@ -31,24 +35,24 @@ with col1:
 with col2:
     st.metric("Predicted Population (Millions)", round(prediction[0],2))
 
-# Chart
-future_years = np.arange(2000,2101,5).reshape(-1,1)
-future_predictions = model.predict(future_years)
+st.write("---")
 
-df = pd.DataFrame({
-    "Year": future_years.flatten(),
-    "Population": future_predictions
-})
+# INFORMATION SECTION
+st.subheader("About Population Growth")
 
-st.subheader("Population Trend")
+st.write("""
+India is currently the most populous country in the world.
+Population growth impacts economy, infrastructure, and resources.
 
-fig, ax = plt.subplots()
-ax.plot(df["Year"], df["Population"])
-ax.scatter(years, population)
-ax.set_xlabel("Year")
-ax.set_ylabel("Population (Millions)")
-ax.set_title("India Population Forecast")
+Machine learning models can help forecast population trends
+based on historical data.
+""")
 
-st.pyplot(fig)
+st.write("---")
 
-st.info("This prediction is generated using Linear Regression on historical population data.")
+# VIDEO SECTION
+st.subheader("Understanding Population Growth")
+
+st.video("https://www.youtube.com/watch?v=PUwmA3Q0_OE")
+
+st.success("Prediction generated using Linear Regression.")
