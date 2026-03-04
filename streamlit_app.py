@@ -7,7 +7,10 @@ st.set_page_config(page_title="India Population AI", layout="wide")
 st.title("🇮🇳 India Population Prediction")
 st.markdown("### AI powered population forecasting system")
 
-st.image("https://images.unsplash.com/photo-1524492412937-b28074a5d7da", use_column_width=True)
+st.image(
+"https://upload.wikimedia.org/wikipedia/commons/8/8b/World_population_density_map.png",
+use_column_width=True
+)
 
 st.write("---")
 
