@@ -674,12 +674,10 @@ with tab1:
     fig.update_layout(
         **PLOT_LAYOUT,
         title='India Population: 1950 → ' + str(target_year),
-        xaxis_title='Year',
-        yaxis_title='Population (Millions)',
         height=500,
-        xaxis=dict(**PLOT_LAYOUT['xaxis'], title_font=dict(color='#8892c4')),
-        yaxis=dict(**PLOT_LAYOUT['yaxis'], title_font=dict(color='#8892c4')),
     )
+    fig.update_xaxes(title_text='Year', title_font=dict(color='#8892c4'))
+    fig.update_yaxes(title_text='Population (Millions)', title_font=dict(color='#8892c4'))
     st.plotly_chart(fig, use_container_width=True)
 
     # Forecast table
